@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+/* Resetting margin and padding and setting box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Setting font-family for the whole document */
+body {
+    font-family: "Poppins", sans-serif;
+    /* Corrected font-family and added fallback */
+}
+
+/* Styling the body to use flexbox for centering */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #252525;
+    /* Setting background color */
+}
+
+/* Styling for the gift container */
+.gift-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 20%;
+}
+
+.gift-container.active {
+    animation: Vibration 1s ease forwards;
+}
+
+/* Keyframes animation definition */
+@keyframes Vibration {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    25% {
+        transform: scale(.95, 1.05);
+    }
+
+    50% {
+        transform: scale(1.1, .9);
+    }
+
+    70% {
+        transform: scale(.9, 1.1);
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+/* Styling for the gift box */
+.gift-container .gift-box {
+    position: absolute;
+    height: 200px;
+    width: 300px;
+    background: #ec9c4a;
+    /* Setting background color */
+    animation: Bounce 4s ease infinite;
+}
+
+/* Keyframe animation definition */
+@keyframes Bounce {
+    50% {
+        width: 300px;
+        background: #ec9c4a;
+        transform: translateY(-24px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.gift-box.active {
+    animation: none;
+}
+
+/* Applying the animation to an element */
+.element {
+    animation: Bounce 4s ease infinite forwards;
+}
+
+/* Styling for the before pseudo-element */
+.gift-box::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 200px;
+    background: #e76f51;
+    left: 124px;
+}
+
+/* Styling for the after pseudo-element */
+.gift-box::after {
+    content: "";
+    position: absolute;
+    box-shadow: inset 0 10px rgba(0, 0, 0, .3);
+    width: 300px;
+    height: 200px;
+}
+
+/* Styling for the .click element */
+.click {
+    position: absolute;
+    background: #ec9c4a;
+    width: 340px;
+    height: 90px;
+    top: -90px;
+    left: -20px;
+    cursor: pointer;
+    z-index: 1;
+    transition: .5s ease;
+}
+
+.click.active {
+    transition-delay: 1s;
+    transform: translateY(-240px);
+}
+
+/* Styling for the ::before pseudo-element of .click */
+.click::before {
+    content: "";
+    width: 50px;
+    height: 90px;
+    position: absolute;
+    background: #e76f51;
+    left: 144px;
+    z-index: 2;
+}
+
+/* Styling for the .text element */
+.text {
+    position: absolute;
+    top: 0;
+    width: 200px;
+    background: #b5d7fd;
+    padding: 20px;
+    text-align: center;
+    font-size: 15px;
+    color: #0000ff;
+    border-radius: 20px;
+    z-index: -1;
+    transform: scale(0);
+    /* Corrected property */
+    transition: .5s ease;
+    transition-delay: 1.2s;
+}
+
+/* Styling for the .text element when it has the active class */
+.text.active {
+    transform: translateY(-240px);
+    /* Adjusted translateY value */
+}
+
+.text.active-2 {
+    /* Corrected class name */
+    top: 0;
+    transition-delay: .2s;
+}
+
+/* Styling for the .gift-container.shadow element */
+.gift-container.shadow {
+    content: "";
+    position: relative;
+    width: 340px;
+    height: 40px;
+    background: rgba(0, 0, 0, .4);
+    top: 100px;
+    border-radius: 50%;
+    left: -4px;
+    animation: BounceOut 4s ease infinite forwards;
+}
+
+.gift-container.shadow.active {
+    animation: none;
+}
+
+/* Keyframes animation definition */
+@keyframes BounceOut {
+    0% {
+        transform: translateY(-24px);
+        scale: .7;
+    }
+
+    50% {
+        transform: translateY(0px);
+        scale: 1;
+    }
+
+    100% {
+        transform: translateY(24px);
+        scale: .7;
+    }
+}

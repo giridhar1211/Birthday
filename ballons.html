@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style>
+        body {
+            margin: 20px;
+            background: url("https://i.pinimg.com/564x/83/84/8e/83848e6163384ec84839e5f8bf936ebb.jpg");
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .balloon_container {
+            position: relative;
+            margin-bottom: 20px;
+            /* Adjust spacing between balloon containers */
+        }
+
+        .balloon {
+            display: inline-block;
+            width: 78px;
+            height: 88px;
+            border-radius: 80%;
+            position: relative;
+            box-shadow: inset -10px -10px 0 rgba(0, 0, 0, 0.07);
+            transition: transform 0.5s ease;
+            z-index: 10;
+            transform-origin: bottom center;
+            color: black;
+            font-weight: bold;
+            font-family: cursive;
+            cursor: pointer;
+        }
+
+        .balloon1 {
+            font-size: 48px;
+        }
+
+        .balloon2 {
+            font-size: 48px;
+            top: -94px;
+        }
+
+        .balloon3 {
+            font-size: 38px;
+            top: -236px;
+        }
+
+        /* Animation keyframes */
+
+        @keyframes balloons1 {
+            0% {
+                transform: translateY(100vh) rotate3d(1, 1, 1, 90deg);
+                opacity: 1;
+            }
+
+            10% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100vh) rotate3d(1, 1, 1, 360deg);
+                opacity: 1;
+            }
+        }
+
+        @keyframes balloons2 {
+            0% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 1;
+            }
+
+            10% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+        }
+
+        @keyframes balloons3 {
+            0% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 1;
+            }
+
+            10% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+        }
+
+        /* Fill the color & set the animation duration and delay */
+
+        .balloon1:nth-child(1) {
+            background: rgba(255, 100, 100);
+            animation: balloons1 10s ease-in-out 0s infinite;
+        }
+
+        .balloon1:nth-child(2) {
+            background: rgba(255, 100, 100);
+            animation: balloons1 10s ease-in-out 3s infinite;
+        }
+
+        .balloon1:nth-child(3) {
+            background: rgba(255, 100, 100);
+            animation: balloons1 10s ease-in-out 6s infinite;
+        }
+
+        .balloon1:nth-child(4) {
+            background: rgba(0, 255, 255);
+            animation: balloons1 10s ease-in-out 9s infinite;
+        }
+
+        .balloon1:nth-child(5) {
+            background: rgba(0, 0, 255);
+            animation: balloons1 10s ease-in-out 12s infinite;
+        }
+
+        .balloon2:nth-child(1) {
+            background: rgba(255, 255, 100);
+            animation: balloons2 10s ease-in-out 15s infinite;
+        }
+
+        .balloon2:nth-child(2) {
+            background: rgba(255, 255, 100);
+            animation: balloons2 10s ease-in-out 18s infinite;
+        }
+
+        .balloon2:nth-child(3) {
+            background: rgba(255, 255, 255);
+            animation: balloons2 10s ease-in-out 21s infinite;
+        }
+
+        .balloon2:nth-child(4) {
+            background: rgba(0, 255, 100);
+            animation: balloons2 10s ease-in-out 24s infinite;
+        }
+
+        .balloon2:nth-child(5) {
+            background: rgba(0, 0, 100);
+            animation: balloons2 10s ease-in-out 27s infinite;
+        }
+
+        .balloon3:nth-child(1) {
+            background: rgba(255, 100, 100);
+            animation: balloons3 10s ease-in-out 30s infinite;
+        }
+
+        .balloon3:nth-child(2) {
+            background: rgba(255, 255, 100);
+            animation: balloons3 10s ease-in-out 33s infinite;
+        }
+
+        .balloon3:nth-child(3) {
+            background: rgba(255, 255, 255);
+            animation: balloons3 10s ease-in-out 36s infinite;
+        }
+
+        .balloon:hover {
+            display: none;
+        }
+        .round-multicolored-button {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    /* Adjust width as needed */
+    padding: 10px 20px;
+    border-radius: 50px;
+    /* Ensure the border-radius is half of the height for a perfect circle */
+    background-image: linear-gradient(to right, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #9400D3);
+    /* You can adjust these colors to your preference */
+    color: #ffffff;
+    /* Text color */
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    /* Remove border */
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Optional: Add shadow for depth */
+    transition: background-image 0.3s ease;
+    /* Optional: Add transition for smooth effect */
+}
+
+.round-multicolored-button:hover {
+    background-image: linear-gradient(to right, #9400D3, #4B0082, #0000FF, #00FF00, #FFFF00, #FF7F00, #FF0000);
+    /* Reverse gradient on hover */
+}
+    </style>
+</head>
+
+<body>
+    <div class="balloon_container">
+        <div class="balloon balloon3">D</div>
+        <div class="balloon balloon3">A</div>
+        <div class="balloon balloon3">Y</div>
+    </div>
+    <div class="balloon_container">
+        <div class="balloon balloon2">B</div>
+        <div class="balloon balloon2">I</div>
+        <div class="balloon balloon2">R</div>
+        <div class="balloon balloon2">T</div>
+        <div class="balloon balloon2">H</div>
+    </div>
+    <div class="balloon_container">
+        <div class="balloon balloon1">H</div>
+        <div class="balloon balloon1">A</div>
+        <div class="balloon balloon1">P</div>
+        <div class="balloon balloon1">P</div>
+        <div class="balloon balloon1">Y</div>
+    </div>
+    <a href="box.html" class="round-multicolored-button">Click Me</a>
+    <script>
+        document.querySelectorAll('.balloon').forEach(function(balloon) {
+            balloon.style.display = 'inline-block'; // Show balloons initially
+            balloon.addEventListener('animationstart', function() {
+                balloon.classList.add('show');
+            });
+            balloon.addEventListener('click', function() {
+                balloon.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+
+</html>

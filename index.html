@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <!-- <link rel="stylesheet" href="boc.css"> -->
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .image-container {
+            position: relative;
+            margin: 10px;
+        }
+
+        .image-container img {
+            width: 400px;
+            height: 300px;
+            border: 2px solid transparent;
+            /* Initially no border */
+            border-radius: 13px;
+            box-shadow: 4px 7px 7px 0px #00000042;
+            cursor: pointer;
+            transition: 400ms;
+        }
+
+        .image-container:hover img {
+            filter: grayscale(100%);
+            transform: scale(1.03);
+        }
+
+        .text-overlay {
+            display: none;
+            /* Initially hidden */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 20px;
+            font-family: 'Brush Script MT', cursive;
+        }
+
+        .image-container:hover .text-overlay {
+            display: block;
+            /* Show text overlay on hover */
+        }
+
+        .multicolor-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Define different color classes */
+        .multicolor-button.red {
+            background: linear-gradient(to right, #ff4d4d, #ffad5a);
+            color: white;
+        }
+
+        .multicolor-button.green {
+            background: linear-gradient(to right, #4CAF50, #85e085);
+            color: white;
+        }
+
+        .multicolor-button.blue {
+            background: linear-gradient(to right, #008CBA, #00ffff);
+            color: white;
+        }
+
+        .multicolor-button.yellow {
+            background: linear-gradient(to right, #ffcc00, #ffff66);
+            color: white;
+        }
+
+        /* Hover effect */
+        .multicolor-button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="https://i.ibb.co/xff2nmY/IMG-20230822-WA0000.jpg" class="image" />
+            <div class="text-overlay">Happy Birthday Chelloiii</div>
+        </div>
+        <div class="image-container">
+            <img src="https://i.ibb.co/LZJGXcT/IMG-20230822-WA0001.jpg" class="image" />
+            <div class="text-overlay">Happy Birthday</div>
+        </div>
+        <div class="image-container">
+            <img src="https://i.ibb.co/dkB08s9/IMG-20230822-WA0002.jpg" class="image" />
+            <div class="text-overlay">Happy Birthday</div>
+        </div>
+        <!-- Multicolor button -->
+        <!-- <button id="multicolor-button" class="multicolor-button red" <a href="ballons.html"></a>> See something more </button> -->
+        <button class="multicolor-button red" onclick="window.location.href='ballons.html'">See something more</button>
+
+    </div>
+
+    <script>
+        // JavaScript to toggle between color classes
+        const button = document.getElementById('multicolor-button');
+        const colors = ['red', 'green', 'blue', 'yellow'];
+        let currentIndex = 0;
+
+        button.addEventListener('click', function() {
+            button.classList.remove(colors[currentIndex]);
+            currentIndex = (currentIndex + 1) % colors.length;
+            button.classList.add(colors[currentIndex]);
+        });
+    </script>
+    <!-- <script src="box.js"></script> -->
+</body>
+
+</html>
